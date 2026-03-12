@@ -1,0 +1,256 @@
+/* BRAND COLORS */
+:root {
+    --navy: #0a1a33;
+    --orange: #ff6a00;
+    --graphite: #2b2b2b;
+    --light-gray: #f7f7f7;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--light-gray);
+    color: #222;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: var(--navy);
+    border-bottom: 3px solid var(--orange);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-placeholder {
+    width: 55px;
+    height: 55px;
+    background: var(--graphite);
+    border-radius: 50%;
+}
+
+/* Desktop Nav */
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    transition: 0.3s ease;
+}
+
+/* Hamburger animation */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--navy);
+    padding: 20px;
+    position: absolute;
+    top: 80px;
+    width: 100%;
+    left: 0;
+    z-index: 999;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: var(--graphite);
+    overflow: hidden;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #2f2f2f;
+}
+
+.hero-text {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: white;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-text h2 {
+    font-size: 1.6rem;
+    margin: 10px 0 20px;
+}
+
+.cta {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 40px;
+    background: white;
+}
+
+.tagline {
+    font-weight: bold;
+    color: var(--navy);
+}
+
+/* PROJECTS */
+.projects {
+    padding: 60px 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--graphite);
+    color: white;
+    padding: 40px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid var(--orange);
+}
+
+/* BLOG CTA */
+.blog-cta {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: var(--navy);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-top: 3px solid var(--orange);
+}
+
+.footer-logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: var(--graphite);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.footer-links a,
+.social a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-text {
+        right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 350px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-text {
+        right: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+}
