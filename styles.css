@@ -1,0 +1,238 @@
+/* BRAND COLORS */
+:root {
+    --navy: #0a1a33;
+    --orange: #ff6a00;
+    --graphite: #2b2b2b;
+    --light-gray: #f7f7f7;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--light-gray);
+    color: #222;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--navy);
+    border-bottom: 3px solid var(--orange);
+    position: relative;
+}
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: var(--graphite);
+    border-radius: 50%;
+}
+
+/* Desktop Nav */
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--navy);
+    padding: 20px;
+}
+
+.mobile-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: var(--graphite);
+    overflow: hidden;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #2f2f2f;
+}
+
+/* HERO TEXT — RIGHT SIDE */
+.hero-text {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    color: white;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero-text h2 {
+    font-size: 1.6rem;
+    margin: 10px 0 20px;
+}
+
+.cta {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--orange);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* ABOUT */
+.about {
+    padding: 60px 40px;
+    background: white;
+}
+
+.tagline {
+    font-weight: bold;
+    color: var(--navy);
+}
+
+/* PROJECTS */
+.projects {
+    padding: 60px 40px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--graphite);
+    color: white;
+    padding: 40px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid var(--orange);
+}
+
+/* BLOG CTA */
+.blog-cta {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: var(--navy);
+    color: white;
+    padding: 40px;
+    text-align: center;
+    border-top: 3px solid var(--orange);
+}
+
+.footer-logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: var(--graphite);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}
+
+.footer-links a,
+.social a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+@media (max-width: 900px) {
+    .hero-text {
+        right: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Hide desktop nav */
+    .nav-links {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    .hero {
+        height: 350px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.2rem;
+    }
+
+    .about,
+    .projects,
+    .blog-cta {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero-text {
+        right: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1rem;
+    }
+}

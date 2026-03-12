@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just Plain Duane</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo-placeholder"></div>
+
+        <!-- Desktop Menu -->
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </nav>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Projects</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-image-placeholder"></div>
+
+        <div class="hero-text hero-right">
+            <h1>Just Plain Duane</h1>
+            <h2>Momentum Matters</h2>
+            <a class="cta" href="#">Watch My Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about">
+        <h3>About Me</h3>
+        <p class="tagline">Building. Creating. Getting it Done.</p>
+        <p>I'm just a regular guy who believes in taking action and making things happen.  
+        From the workshop to the van build, it's all about momentum.</p>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects">
+        <h3>Latest Projects</h3>
+        <div class="project-grid">
+            <div class="project-card">Momentum Matters Series</div>
+            <div class="project-card">Shed Studio</div>
+            <div class="project-card">Van Build Prototyping</div>
+        </div>
+    </section>
+
+    <!-- BLOG CTA -->
+    <section class="blog-cta">
+        <h3>Get Inspired</h3>
+        <a class="cta" href="#">Read the Blog</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo-placeholder"></div>
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">Projects</a>
+            <a href="#">Blog</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="social">
+            <a href="#">LinkedIn</a>
+            <a href="#">YouTube</a>
+            <a href="mailto:email@example.com">Email</a>
+        </div>
+    </footer>
+
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('open');
+        });
+    </script>
+
+</body>
+</html>
