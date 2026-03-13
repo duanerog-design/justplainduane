@@ -9,77 +9,93 @@
 
 <body>
 
-    <!-- NAVIGATION -->
-<header class="navbar">
-        <div class="logo-placeholder"></div>
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="logo">JPD</div>
 
         <nav class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Projectz</a>
-            <a href="#">Blog</a>
+            <a href="#">The Momentum Feed</a>
+            <a href="#">The Shed Studio</a>
+            <a href="#">Van Lab</a>
+            <a href="#">The Lens</a>
+            <a href="#">Outreach & Impact</a>
             <a href="#">Contact</a>
-    </nav>
+        </nav>
 
-        <!-- Hamburger -->
-        
-</header>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
 
-    <!-- Mobile Menu -->
-    
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">The Momentum Feed</a>
+        <a href="#">The Shed Studio</a>
+        <a href="#">Van Lab</a>
+        <a href="#">The Lens</a>
+        <a href="#">Outreach & Impact</a>
+        <a href="#">Contact</a>
+    </div>
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-image-placeholder"></div>
-
-        <div class="hero-text">
-            <h1>Just Plain Duanez</h1>
+        <div class="hero-content">
+            <h1>Just Plain Duane</h1>
             <h2>Momentum Matters</h2>
-            <a class="cta" href="#">Watch My Work</a>
+            <button>Watch My Work</button>
         </div>
     </section>
 
-    <!-- ABOUT -->
-    <section class="about">
-        <h3>About Me</h3>
-        <p class="tagline">Building. Creating. Getting it Done.</p>
-        <p>I'm just a regular guy who believes in taking action and making things happen.  
-        From the workshop to the van build, it's all about momentum.</p>
+    <!-- MOMENTUM FEED -->
+    <section class="momentum-feed">
+        <h3>The Momentum Feed</h3>
+        <ul>
+            <li>Momentum Matters | Ep. 4 | Risks</li>
+            <li>3D Print | Prototype</li>
+            <li>The Lens | Photography</li>
+            <li>Outreach | Prototype</li>
+        </ul>
+        <button>Keep the Momentum Moving</button>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- PASSION PROJECTS -->
     <section class="projects">
-        <h3>Latest Projects</h3>
+        <h3>Passion Projects & Personal Growth Pillars</h3>
+
         <div class="project-grid">
-            <div class="project-card">Momentum Matters Series</div>
-            <div class="project-card">Shed Studio</div>
-            <div class="project-card">Van Build Prototyping</div>
+            <div class="project shed">The Shed Studio Build</div>
+            <div class="project van">Van & 3D Lab</div>
+            <div class="project lens">The Lens</div>
+            <div class="project impact">The Impact</div>
         </div>
     </section>
 
-    <!-- BLOG CTA -->
-    <section class="blog-cta">
-        <h3>Get Inspired</h3>
-        <a class="cta" href="#">Read the Blog</a>
+    <!-- PM KNOWLEDGE -->
+    <section class="pm-knowledge">
+        <h3>The Workshop & PM Knowledge</h3>
+
+        <div class="pm-columns">
+            <div class="pm-block">PM Tips</div>
+            <div class="pm-block">Day Job Updates</div>
+            <div class="pm-block">Technical Skill Articles</div>
+        </div>
+
+        <button>Join the Momentum Feed</button>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-logo-placeholder"></div>
-        <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Projects</a>
-            <a href="#">Blog</a>
+    <footer class="footer">
+        <p>JPD | Momentum Matters</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
             <a href="#">Contact</a>
-        </div>
-        <div class="social">
-            <a href="#">LinkedIn</a>
-            <a href="#">YouTube</a>
-            <a href="mailto:email@example.com">Email</a>
-        </div>
+        </nav>
+        <p>(210) 235-3359</p>
     </footer>
 
-    <!-- MOBILE MENU SCRIPT -->
+    <!-- SCRIPT -->
     <script>
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobileMenu');
@@ -91,4 +107,5 @@
     </script>
 
 </body>
+
 </html>
