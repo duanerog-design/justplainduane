@@ -18,6 +18,12 @@ body {
     padding: 0 20px;
 }
 
+/* DESKTOP DEFAULT — hide mobile versions */
+.title-mobile,
+.mobile-text {
+    display: none;
+}
+
 /* HEADER */
 .main-header {
     padding: 20px 0;
