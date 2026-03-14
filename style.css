@@ -197,17 +197,19 @@ body {
     margin-bottom: 30px;
 }
 
+/* REELS — DESKTOP */
 .reel-row {
-    display: flex;
-    gap: 15px;
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
 }
 
 .reel-box {
-    flex: 1;
     background: #222;
-    height: 180px;
-    border-radius: 4px;
     border: 1px solid #333;
+    border-radius: 6px;
+    aspect-ratio: 9 / 16;
+    width: 100%;
 }
 
 /* PILLARS */
@@ -333,6 +335,16 @@ body {
         font-size: 14px;
         color: #ccc;
         line-height: 1.5;
+    }
+
+    /* REELS — MOBILE */
+    .reel-row {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+
+    .reel-box {
+        aspect-ratio: 9 / 16;
     }
 
     /* Passion Projects */
