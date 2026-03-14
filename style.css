@@ -89,7 +89,7 @@ body {
     border-radius: 2px;
 }
 
-/* MOBILE NAV (hidden by default) */
+/* MOBILE NAV */
 .mobile-nav {
     display: none;
     flex-direction: column;
@@ -108,7 +108,13 @@ body {
 
 /* HERO */
 .hero {
-    padding: 80px 0;
+    padding: 80px 0 120px 0; /* clean spacing */
+}
+
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
 .hero-image {
@@ -118,24 +124,13 @@ body {
     border-radius: 8px;
 }
 
-.hero-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
 .hero-content {
     flex: 1;
     display: flex;
     justify-content: center;
-    align-items: flex-end; /* pushes the block to the right */
-    text-align: center;    /* centers the text inside the block */
+    align-items: flex-end;
+    text-align: center;
 }
-
-.hero-text-wrap {
-    width: 100%;
-}
-
 
 .hero-title {
     font-size: 45px;
@@ -161,15 +156,20 @@ body {
 
 /* METHOD */
 .method {
-    padding: 60px 0;
+    padding: 100px 0; /* FIXED — clean spacing above + below */
     background: #1a1a1a;
+}
+
+.method-title {
+    text-align: center;
+    color: #d97706;
+    margin-bottom: 25px;
 }
 
 .method-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
-    margin-top: 20px;
 }
 
 .method-col h3 {
@@ -255,59 +255,6 @@ body {
     color: #666;
 }
 
-.socials a {
-    color: #fff;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .main-nav {
-        display: none;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .mobile-nav {
-        display: none;
-    }
-
-    .mobile-nav.active {
-        display: flex;
-    }
-
-    .btn-outline {
-        display: none;
-    }
-
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-}
-.footer-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.footer-jpd {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: 1px;
-    color: #ffffff;
-}
-
-.footer-tagline {
-    font-family: 'Pacifico', cursive;
-    font-size: 1.3rem;
-    color: #FFFFFF; /* your brand orange */
-}
 .footer-brand {
     display: flex;
     align-items: center;
@@ -318,14 +265,66 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1.6rem;
-    letter-spacing: 1px;
     color: #3F3E3E;
 }
 
 .footer-tagline {
-    font-family: 'Allura', cursive; /* or Allura, or Dancing Script */
+    font-family: 'Allura', cursive;
     font-size: 1.7rem;
-    font-weight: 400; /* ensures it's NOT bold */
-    color: #3F3E3E; /* your brand orange */
+    font-weight: 400;
+    color: #3F3E3E;
     line-height: 1;
+}
+
+.socials a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+/* MOBILE OPTIMIZATION */
+.title-mobile,
+.mobile-text {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .main-nav { display: none; }
+    .hamburger { display: flex; }
+    .btn-outline { display: none; }
+
+    .hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .method-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .title-desktop,
+    .desktop-text {
+        display: none;
+    }
+
+    .title-mobile,
+    .mobile-text {
+        display: block;
+    }
+
+    .title-mobile {
+        color: #d97706;
+        font-size: 18px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+
+    .mobile-text {
+        font-size: 14px;
+        color: #ccc;
+        line-height: 1.5;
+    }
 }
