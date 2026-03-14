@@ -241,7 +241,7 @@ body {
     color: #999;
 }
 
-/* FOOTER */
+/* FOOTER — DESKTOP */
 .footer {
     border-top: 2px solid #d97706;
     padding: 40px 0;
@@ -251,14 +251,16 @@ body {
 .footer-wrap {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 12px;
     color: #666;
 }
 
 .footer-brand {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .footer-jpd {
@@ -266,11 +268,12 @@ body {
     font-weight: 700;
     font-size: 1.6rem;
     color: #3F3E3E;
+    line-height: 1;
 }
 
 .footer-tagline {
     font-family: 'Allura', cursive;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     font-weight: 400;
     color: #3F3E3E;
     line-height: 1;
@@ -283,23 +286,21 @@ body {
     font-weight: bold;
 }
 
-/* MOBILE OPTIMIZATION */
-.title-mobile,
-.mobile-text {
-    display: none;
-}
-
+/* MOBILE — ALL OVERRIDES */
 @media (max-width: 768px) {
 
+    /* Header */
     .main-nav { display: none; }
     .hamburger { display: flex; }
     .btn-outline { display: none; }
 
+    /* Hero */
     .hero-container {
         flex-direction: column;
         text-align: center;
     }
 
+    /* Method */
     .method-grid {
         grid-template-columns: 1fr;
         gap: 25px;
@@ -327,57 +328,49 @@ body {
         color: #ccc;
         line-height: 1.5;
     }
-}
 
-/* -------------------------------------- */
-/* METHOD — MOBILE OVERRIDES (MUST BE LAST) */
-/* -------------------------------------- */
-
-@media (max-width: 768px) {
-
-    .method-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .title-desktop,
-    .desktop-text {
-        display: none;
-    }
-
-    .title-mobile,
-    .mobile-text {
-        display: block;
-    }
-
-    .title-mobile {
-        color: #d97706;
-        font-size: 18px;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-    }
-
-    .mobile-text {
-        font-size: 14px;
-        color: #ccc;
-        line-height: 1.5;
-    }
-}
-
-/* -------------------------------------- */
-/* PASSION PROJECTS — MOBILE FIX */
-/* -------------------------------------- */
-
-@media (max-width: 768px) {
-
-    /* Hide Community & Business pillar */
+    /* Passion Projects */
     .pillar-hide-mobile {
         display: none;
     }
 
-    /* Stack remaining 3 pillars cleanly */
     .pillar-row {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+
+    /* Footer */
+    .footer-wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .footer-jpd {
+        font-size: 1.8rem;
+    }
+
+    .footer-tagline {
+        font-size: 1.4rem;
+        line-height: 1.1;
+    }
+
+    .socials {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .socials a {
+        margin-left: 0;
+        font-size: 14px;
+        letter-spacing: 1px;
     }
 }
