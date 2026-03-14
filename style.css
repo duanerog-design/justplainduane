@@ -108,7 +108,7 @@ body {
 
 /* HERO */
 .hero {
-    padding: 80px 0 120px 0; /* clean spacing */
+    padding: 80px 0 120px 0;
 }
 
 .hero-container {
@@ -156,7 +156,7 @@ body {
 
 /* METHOD */
 .method {
-    padding: 100px 0; /* FIXED — clean spacing above + below */
+    padding: 100px 0;
     background: #1a1a1a;
 }
 
@@ -328,6 +328,7 @@ body {
         line-height: 1.5;
     }
 }
+
 /* -------------------------------------- */
 /* METHOD — MOBILE OVERRIDES (MUST BE LAST) */
 /* -------------------------------------- */
@@ -360,5 +361,23 @@ body {
         font-size: 14px;
         color: #ccc;
         line-height: 1.5;
+    }
+}
+
+/* -------------------------------------- */
+/* PASSION PROJECTS — MOBILE FIX */
+/* -------------------------------------- */
+
+@media (max-width: 768px) {
+
+    /* Hide Community & Business pillar */
+    .pillar-hide-mobile {
+        display: none;
+    }
+
+    /* Stack remaining 3 pillars cleanly */
+    .pillar-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
