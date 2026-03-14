@@ -1,15 +1,69 @@
-/* Ensure this file is saved as styles.css in your project root */
+/* GLOBAL */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: #121212; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
 /* HEADER */
-.main-header { padding: 20px 0; border-bottom: 1px solid #333; }
+.main-header { padding: 20px 0; border-bottom: 1px solid #333; position: relative; }
 .header-container { display: flex; justify-content: space-between; align-items: center; }
-.logo-box { font-weight: bold; border: 2px solid #fff; padding: 5px 12px; font-size: 20px; }
+
+.logo-box { 
+    font-weight: 600; 
+    border: 2px solid #fff; 
+    padding: 5px 12px; 
+    font-size: 20px; 
+    border-radius: 6px;
+}
+
+/* CONTACT BUTTON */
+.btn-outline {
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 6px 14px;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.btn-outline:hover {
+    border-color: #d97706;
+    color: #d97706;
+}
+
+/* NAVIGATION */
 .main-nav ul { display: flex; gap: 20px; list-style: none; }
 .main-nav a { color: #888; text-decoration: none; font-size: 12px; font-weight: bold; text-transform: uppercase; }
 .main-nav a.active { color: #d97706; }
+
+/* HAMBURGER */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+.hamburger span {
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+/* MOBILE NAV (hidden by default) */
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: #1a1a1a;
+    padding: 20px;
+    border-top: 1px solid #333;
+}
+.mobile-nav a {
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 14px;
+    border-bottom: 1px solid #333;
+}
 
 /* HERO */
 .hero { padding: 80px 0; }
@@ -20,7 +74,7 @@ body { background: #121212; color: #fff; font-family: 'Segoe UI', Arial, sans-se
 .hero-subtitle { color: #d97706; font-size: 22px; font-weight: bold; margin-bottom: 25px; }
 .btn-primary { background: #d97706; color: #fff; padding: 14px 28px; text-decoration: none; font-weight: bold; border-radius: 4px; display: inline-block; }
 
-/* METHOD & MADNESS (Above Feed) */
+/* METHOD */
 .method { padding: 60px 0; background: #1a1a1a; }
 .method-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 20px; }
 .method-col h3 { color: #d97706; margin-bottom: 10px; font-size: 18px; }
@@ -43,3 +97,11 @@ body { background: #121212; color: #fff; font-family: 'Segoe UI', Arial, sans-se
 .footer { border-top: 2px solid #d97706; padding: 40px 0; margin-top: 40px; }
 .footer-wrap { display: flex; justify-content: space-between; font-size: 12px; color: #666; }
 .socials a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: bold; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .main-nav { display: none; }
+    .hamburger { display: flex; }
+    .mobile-nav { display: none; }
+    .hero-container { flex-direction: column; text-align: center; }
+}

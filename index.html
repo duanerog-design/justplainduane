@@ -3,23 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>JPD | Momentum Matters</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="main-header">
-        <div class="container header-container">
-            <div class="logo-box">JPD</div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#" class="active">[THE MOMENTUM FEED]</a></li>
-                    <li><a href="#">THE SHED STUDIO</a></li>
-                    <li><a href="#">VAN LAB</a></li>
-                    <li><a href="#">THE LENS</a></li>
-                </ul>
-            </nav>
-            <a href="#" class="btn-outline">CONTACT</a>
+    <div class="container header-container">
+        <div class="logo-box">JPD</div>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="active">[THE MOMENTUM FEED]</a></li>
+                <li><a href="#">THE SHED STUDIO</a></li>
+                <li><a href="#">VAN LAB</a></li>
+                <li><a href="#">THE LENS</a></li>
+				<li><a href="#">COMMUNITY AND BUSINESS</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
         </div>
-    </header>
+
+        <a href="#" class="btn-outline">CONTACT</a>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="#">THE MOMENTUM FEED</a>
+        <a href="#">THE SHED STUDIO</a>
+        <a href="#">VAN LAB</a>
+        <a href="#">THE LENS</a>
+		<a href="#">COMMUNITY AND BUSINESS</a>
+        <a href="#">CONTACT</a>
+    </div>
+</header>
+
 
     <section class="hero">
         <div class="container hero-container">
@@ -74,5 +91,6 @@
             </div>
         </div>
     </footer>
+	<script src="script.js"></script>
 </body>
 </html>

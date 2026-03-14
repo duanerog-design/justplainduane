@@ -1,10 +1,8 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Untitled Document</title>
-</head>
+// Mobile hamburger toggle
+const hamburger = document.getElementById("hamburger");
+const mobileNav = document.getElementById("mobileNav");
 
-<body>
-</body>
-</html>
+hamburger.addEventListener("click", () => {
+    mobileNav.style.display =
+        mobileNav.style.display === "flex" ? "none" : "flex";
+});
