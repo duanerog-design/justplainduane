@@ -209,12 +209,14 @@ body {
 }
 
 .feed-title-link {
-    color: inherit;
+    color: #fff;
     text-decoration: none;
 }
 
+.feed-title-link:link,
 .feed-title-link:visited {
-    color: inherit;
+    color: #fff;
+    text-decoration: none;
 }
 
 .feed-title-link:hover {
@@ -1042,6 +1044,93 @@ a.pillar:hover {
     line-height: 1.6;
 }
 
+/* ===== IN MOTION PAGE ===== */
+
+.motion-hero {
+    padding: 80px 0 120px 0;
+}
+
+.motion-hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.motion-hero-image {
+    flex: 1;
+    background: #222;
+    height: 400px;
+    border-radius: 8px;
+}
+
+.motion-hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.motion-hero-title {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.motion-hero-subtitle {
+    color: #d97706;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.motion-hero-desc {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.motion-videos {
+    padding: 80px 0;
+    background: #1a1a1a;
+}
+
+.motion-video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.motion-video-item {
+    background: #222;
+    border: 1px solid #333;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.motion-video-thumb {
+    background: #2a2a2a;
+    aspect-ratio: 16 / 9;
+}
+
+.motion-video-info {
+    padding: 20px;
+}
+
+.motion-video-info h4 {
+    color: #d97706;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.motion-video-info p {
+    color: #999;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.motion-reels {
+    padding: 80px 0;
+}
+
 /* ===== MOBILE OVERRIDES FOR NEW PAGES ===== */
 @media (max-width: 768px) {
 
@@ -1098,6 +1187,20 @@ a.pillar:hover {
     }
 
     .comm-project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* In Motion */
+    .motion-hero-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .motion-hero-title {
+        font-size: 30px;
+    }
+
+    .motion-video-grid {
         grid-template-columns: 1fr;
     }
 }
