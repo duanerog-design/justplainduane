@@ -78,7 +78,12 @@ body {
     text-transform: uppercase;
 }
 
-.main-nav a.active {
+.main-nav a:visited {
+    color: #888;
+}
+
+.main-nav a.active,
+.main-nav a.active:visited {
     color: #d97706;
 }
 
@@ -112,6 +117,10 @@ body {
     text-decoration: none;
     font-size: 14px;
     border-bottom: 1px solid #333;
+}
+
+.mobile-nav a:visited {
+    color: #fff;
 }
 
 /* HERO */
@@ -294,6 +303,15 @@ body {
     text-decoration: none;
     margin-left: 20px;
     font-weight: bold;
+}
+
+.socials a:visited {
+    color: #fff;
+}
+
+.socials a:hover {
+    color: #fff;
+    text-decoration: none;
 }
 
 /* MOBILE — ALL OVERRIDES */
@@ -568,15 +586,20 @@ body {
 .studio-link {
     display: inline-block;
     margin-top: 15px;
-    color: #d97706;
+    color: #fff;
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
+.studio-link:visited {
+    color: #fff;
+}
+
 .studio-link:hover {
-    text-decoration: underline;
+    color: #fff;
+    text-decoration: none;
 }
 
 /* Pillar as a link */
@@ -585,6 +608,10 @@ a.pillar {
     display: block;
     color: inherit;
     transition: border-color 0.2s;
+}
+
+a.pillar:visited {
+    color: inherit;
 }
 
 a.pillar:hover {
