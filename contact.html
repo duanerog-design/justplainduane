@@ -218,35 +218,21 @@
     </div>
 </footer>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.4.1/dist/email.min.js"
-    integrity="sha384-SALc35EccAf6RzGw4iNsyj7kTPr33K7RoGzYu+7heZhT8s0GZouafRiCg1qy44AS"
-    crossorigin="anonymous">
-</script>
 <script src="script.js"></script>
 <script>
-    // EmailJS – sends all form fields to the configured recipient.
+    // Formspree – sends all form fields to your email address.
     // To activate email delivery:
-    //   1. Sign up at https://www.emailjs.com (free tier: 200 emails/month)
-    //   2. Add a service connected to your Gmail account and copy the Service ID.
-    //   3. Create an email template that uses these variables:
-    //        {{name}}, {{email}}, {{organisation}}, {{area}}, {{subject}}, {{source}}, {{message}}
-    //      Set the "To Email" in the template to your Gmail address.
-    //      Copy the Template ID.
-    //   4. Go to Account > API Keys and copy your Public Key.
-    //   5. Replace the three placeholder strings below with your actual values.
-    var EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
-    var EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
-    var EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+    //   1. Sign up at https://formspree.io (free tier: 50 submissions/month)
+    //   2. Click "New Form", give it a name (e.g. "justplainduane contact"),
+    //      and set the notification email to your Gmail address.
+    //   3. Copy the form endpoint shown on the dashboard
+    //      (it looks like: https://formspree.io/f/xxxxxxxx)
+    //   4. Replace 'YOUR_FORMSPREE_ENDPOINT' below with that URL.
+    //
+    // Form fields sent: name, email, organisation, area, subject, source, message
+    var FORMSPREE_ENDPOINT = 'YOUR_FORMSPREE_ENDPOINT';
 
-    var emailjsReady = (
-        EMAILJS_PUBLIC_KEY  !== 'YOUR_PUBLIC_KEY' &&
-        EMAILJS_SERVICE_ID  !== 'YOUR_SERVICE_ID' &&
-        EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID'
-    );
-    if (emailjsReady) {
-        emailjs.init(EMAILJS_PUBLIC_KEY);
-    }
+    var formspreeReady = FORMSPREE_ENDPOINT !== 'YOUR_FORMSPREE_ENDPOINT';
 
     // Live character count for message textarea
     var textarea = document.getElementById('contactMessage');
@@ -259,20 +245,20 @@
         });
     }
 
-    // Form validation, EmailJS submission, and success display
+    // Form validation, Formspree submission, and success display
     var form = document.getElementById('contactForm');
     var successPanel = document.getElementById('contactSuccess');
     var submitBtn = form ? form.querySelector('.contact-submit') : null;
 
-    if (!emailjsReady && submitBtn) {
+    if (!formspreeReady && submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.title = 'Contact form not yet configured — please set up EmailJS credentials.';
+        submitBtn.title = 'Contact form not yet configured — please set up Formspree endpoint.';
     }
 
     if (form && successPanel) {
         form.addEventListener('submit', function (e) {
             e.preventDefault();
-            if (!emailjsReady) { return; }
+            if (!formspreeReady) { return; }
             if (!form.checkValidity()) {
                 form.reportValidity();
                 return;
@@ -281,19 +267,32 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Sending…';
 
-            emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
-                .then(function () {
+            fetch(FORMSPREE_ENDPOINT, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(function (response) {
+                if (response.ok) {
                     form.style.display = 'none';
                     successPanel.style.display = 'block';
-                }, function (error) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = 'SEND MESSAGE &nbsp; &#9654;';
-                    var msg = (error && (error.text || error.status))
-                        ? 'Sorry, your message could not be sent (' + (error.text || 'status ' + error.status) + '). Please try again later.'
-                        : 'Sorry, your message could not be sent. Please try again later.';
-                    alert(msg);
-                    console.error('EmailJS error:', error);
-                });
+                } else {
+                    var status = response.status;
+                    return response.json()
+                        .catch(function () {
+                            throw new Error('status ' + status);
+                        })
+                        .then(function (data) {
+                            throw new Error((data.errors || []).map(function (err) { return err.message; }).join(', ') || 'status ' + status);
+                        });
+                }
+            })
+            .catch(function (error) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'SEND MESSAGE &nbsp; &#9654;';
+                alert('Sorry, your message could not be sent (' + error.message + '). Please try again later.');
+                console.error('Formspree error:', error);
+            });
         });
     }
 </script>
