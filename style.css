@@ -208,6 +208,20 @@ body {
     margin-bottom: 30px;
 }
 
+.feed-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.feed-title-link:visited {
+    color: inherit;
+}
+
+.feed-title-link:hover {
+    color: #d97706;
+    text-decoration: none;
+}
+
 /* REELS — DESKTOP */
 .reel-row {
     display: grid !important;
@@ -586,7 +600,7 @@ body {
 .studio-link {
     display: inline-block;
     margin-top: 15px;
-    color: #fff;
+    color: #d97706;
     text-decoration: none;
     font-size: 13px;
     font-weight: bold;
@@ -594,12 +608,12 @@ body {
 }
 
 .studio-link:visited {
-    color: #fff;
+    color: #d97706;
 }
 
 .studio-link:hover {
-    color: #fff;
-    text-decoration: none;
+    color: #d97706;
+    text-decoration: underline;
 }
 
 /* Pillar as a link */
