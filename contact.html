@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <title>JPD | Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="container header-container">
+        <a href="index.html" class="logo-box">JPD</a>
+
+        <nav class="main-nav">
+            <ul>
+                <li><a href="momentum-feed.html">[THE MOMENTUM FEED]</a></li>
+                <li><a href="shed-studio.html">THE SHED STUDIO</a></li>
+                <li><a href="van-lab.html">VAN LAB</a></li>
+                <li><a href="the-lens.html">THE LENS</a></li>
+                <li><a href="community-business.html">COMMUNITY AND BUSINESS</a></li>
+                <li><a href="in-motion.html">IN MOTION</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+
+        <a href="contact.html" class="btn-outline active">CONTACT</a>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+        <a href="momentum-feed.html">THE MOMENTUM FEED</a>
+        <a href="shed-studio.html">THE SHED STUDIO</a>
+        <a href="van-lab.html">VAN LAB</a>
+        <a href="the-lens.html">THE LENS</a>
+        <a href="community-business.html">COMMUNITY AND BUSINESS</a>
+        <a href="in-motion.html">IN MOTION</a>
+        <a href="contact.html">CONTACT</a>
+    </div>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="contact-hero">
+    <div class="container">
+        <p class="contact-eyebrow">GET IN TOUCH</p>
+        <h1 class="contact-hero-title">LET'S CONNECT</h1>
+        <p class="contact-hero-subtitle">Momentum Matters</p>
+        <p class="contact-hero-desc">
+            Whether you have a project in mind, a collaboration to explore, or simply want to say hello —
+            fill in the form below and I'll get back to you as soon as I can.
+        </p>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact-form-section">
+    <div class="container contact-form-wrap">
+
+        <form class="contact-form" id="contactForm" novalidate>
+
+            <!-- Row 1: Name + Email -->
+            <div class="contact-form-row">
+                <div class="contact-field">
+                    <label for="contactName" class="contact-label">Full Name <span class="contact-required">*</span></label>
+                    <input
+                        type="text"
+                        id="contactName"
+                        name="name"
+                        class="contact-input"
+                        placeholder="Your full name"
+                        required
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="contact-field">
+                    <label for="contactEmail" class="contact-label">Email Address <span class="contact-required">*</span></label>
+                    <input
+                        type="email"
+                        id="contactEmail"
+                        name="email"
+                        class="contact-input"
+                        placeholder="your@email.com"
+                        required
+                        maxlength="150"
+                    >
+                </div>
+            </div>
+
+            <!-- Row 2: Organisation + Area of Interest -->
+            <div class="contact-form-row">
+                <div class="contact-field">
+                    <label for="contactOrg" class="contact-label">Organisation / Company <span class="contact-optional">(optional)</span></label>
+                    <input
+                        type="text"
+                        id="contactOrg"
+                        name="organisation"
+                        class="contact-input"
+                        placeholder="Where are you based or representing?"
+                        maxlength="100"
+                    >
+                </div>
+
+                <div class="contact-field">
+                    <label for="contactArea" class="contact-label">Area of Interest <span class="contact-required">*</span></label>
+                    <select id="contactArea" name="area" class="contact-select" required>
+                        <option value="" disabled selected>Select a topic…</option>
+                        <option value="general">General</option>
+                        <option value="outreach-humanitarian">Outreach &amp; Humanitarian</option>
+                        <option value="real-estate">Real Estate</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="photography">Photography</option>
+                        <option value="videography">Videography</option>
+                        <option value="momentum-feed">The Momentum Feed</option>
+                        <option value="shed-studio">The Shed Studio</option>
+                        <option value="van-lab">Van Lab / 3D Printing</option>
+                        <option value="the-lens">The Lens</option>
+                        <option value="in-motion">In Motion</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 3: Subject -->
+            <div class="contact-form-row">
+                <div class="contact-field contact-field--full">
+                    <label for="contactSubject" class="contact-label">Subject <span class="contact-required">*</span></label>
+                    <input
+                        type="text"
+                        id="contactSubject"
+                        name="subject"
+                        class="contact-input"
+                        placeholder="Brief summary of your message"
+                        required
+                        maxlength="150"
+                    >
+                </div>
+            </div>
+
+            <!-- Row 4: How did you find me -->
+            <div class="contact-form-row">
+                <div class="contact-field contact-field--full">
+                    <label for="contactSource" class="contact-label">How did you find me? <span class="contact-optional">(optional)</span></label>
+                    <select id="contactSource" name="source" class="contact-select">
+                        <option value="" disabled selected>Select one…</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="referral">Referral / Word of mouth</option>
+                        <option value="google">Google / Web search</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Row 5: Message -->
+            <div class="contact-form-row">
+                <div class="contact-field contact-field--full">
+                    <label for="contactMessage" class="contact-label">
+                        Message <span class="contact-required">*</span>
+                        <span class="contact-char-count" id="charCount">0 / 3000</span>
+                    </label>
+                    <textarea
+                        id="contactMessage"
+                        name="message"
+                        class="contact-textarea"
+                        placeholder="Tell me more about what you have in mind…"
+                        required
+                        maxlength="3000"
+                        rows="8"
+                    ></textarea>
+                    <p class="contact-hint">Maximum 3,000 characters.</p>
+                </div>
+            </div>
+
+            <!-- Privacy note -->
+            <p class="contact-privacy">
+                Your details will only be used to respond to your enquiry. No spam, no sharing.
+            </p>
+
+            <!-- Submit -->
+            <div class="contact-submit-row">
+                <button type="submit" class="btn-primary contact-submit">SEND MESSAGE &nbsp; &#9654;</button>
+            </div>
+
+        </form>
+
+        <!-- Success message (hidden by default) -->
+        <div class="contact-success" id="contactSuccess" aria-live="polite">
+            <p class="contact-success-icon">&#10003;</p>
+            <h2>Message Sent!</h2>
+            <p>Thanks for reaching out — I'll be in touch soon.</p>
+            <a href="index.html" class="btn-primary" style="margin-top:20px; display:inline-block;">BACK TO HOME</a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-wrap">
+        <div class="footer-brand">
+            <a href="index.html" class="footer-jpd footer-home-link">JPD</a>
+            <a href="index.html" class="footer-tagline footer-home-link">Momentum Matters</a>
+        </div>
+
+        <div class="socials">
+            <a href="#">YOUTUBE</a>
+            <a href="#">LINKEDIN</a>
+            <a href="#">INSTAGRAM</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+    // Live character count for message textarea
+    var textarea = document.getElementById('contactMessage');
+    var charCount = document.getElementById('charCount');
+    if (textarea && charCount) {
+        textarea.addEventListener('input', function () {
+            var len = textarea.value.length;
+            charCount.textContent = len + ' / 3000';
+            charCount.style.color = len >= 2700 ? '#d97706' : '';
+        });
+    }
+
+    // Basic client-side validation feedback + success display
+    var form = document.getElementById('contactForm');
+    var successPanel = document.getElementById('contactSuccess');
+    if (form && successPanel) {
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+            form.style.display = 'none';
+            successPanel.style.display = 'block';
+        });
+    }
+</script>
+</body>
+</html>
